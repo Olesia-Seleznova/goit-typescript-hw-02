@@ -1,9 +1,14 @@
+import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Formik, Form, Field } from "formik";
 import { AiOutlineSearch } from "react-icons/ai";
 import css from "./SearchBar.module.css";
 
-export default function SearchBar({ onSearch }) {
+interface SearchBarProps {
+  onSearch: (newQuery: string) => Promise<void>;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const notify = () => toast.error("Text must be entered");
 
   return (
@@ -37,4 +42,6 @@ export default function SearchBar({ onSearch }) {
       </Formik>
     </>
   );
-}
+};
+
+export default SearchBar;
