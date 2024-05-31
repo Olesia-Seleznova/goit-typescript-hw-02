@@ -1,7 +1,8 @@
+import React from "react";
 import { ThreeCircles } from "react-loader-spinner";
 import css from "./Loader.module.css";
 
-export default function Loader() {
+const Loader: React.FC = () => {
   return (
     <div className={css.div}>
       <ThreeCircles
@@ -16,4 +17,6 @@ export default function Loader() {
       <p className={css.p}>Please, wait... Images are loading...</p>
     </div>
   );
-}
+};
+
+export default Loader;
